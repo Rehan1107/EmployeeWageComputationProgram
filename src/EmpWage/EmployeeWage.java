@@ -8,22 +8,29 @@ public class EmployeeWage {
     public static final int NUM_OF_WORKING_DAYS = 2;
     public static final int MAX_HRS_IN_MONTH = 10;
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         System.out.println("Welcome to Employee Wage Computation Program");
+        computeWage();
 
+    }
+
+    public static int computeWage()
+    {
         //Variables
         int empHrs = 0;
         int totalEmpHrs = 0;
         int totalWorkingDays = 0;
 
-        while (totalEmpHrs <= MAX_HRS_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS) {
-            {
+        //Computation
+        while (totalEmpHrs <= MAX_HRS_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS)
+        {
                 totalWorkingDays++;
 
-                //Computation
                 int empCheck = (int) Math.floor(Math.random() * 10) % 3;
 
-                switch (empCheck) {
+                switch (empCheck)
+                {
                     case IS_PART_TIME:
                         empHrs = 4;
                         break;
@@ -38,14 +45,15 @@ public class EmployeeWage {
                 }
 
                 totalEmpHrs += empHrs;
-                System.out.println("Day#: " + totalWorkingDays + "Emp Hr: " + empHrs);
-
-            }
-
-            int totalEmpWage = totalEmpHrs * EMP_RATE_PER_HOUR;
-            System.out.println("Total Emp Wage: " + totalEmpWage);
+                System.out.println("Day#: " + totalWorkingDays + " Emp Hr: " + empHrs);
 
         }
-    }
 
+        int totalEmpWage = totalEmpHrs * EMP_RATE_PER_HOUR;
+        System.out.println("Total Emp Wage: " + totalEmpWage);
+
+        return totalEmpWage;
+    }
 }
+
+
